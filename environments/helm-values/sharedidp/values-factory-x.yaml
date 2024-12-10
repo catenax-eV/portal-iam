@@ -19,7 +19,7 @@
 
 keycloak:
   auth:
-    adminPassword: "<path:portal/data/portal/iam/sharedidp-keycloak#admin-password>"
+    adminPassword: "<path:factory-x/data/portal/iam/sharedidp-keycloak#admin-password>"
   ingress:
     enabled: true
     ingressClassName: nginx
@@ -37,25 +37,25 @@ keycloak:
     tls: true
   postgresql:
     auth:
-      password: "<path:portal/data/portal/iam/sharedidp-keycloak#postgres-custom-user>"
-      postgresPassword: "<path:portal/data/portal/iam/sharedidp-keycloak#postgres-admin-user>"
+      password: "<path:factory-x/data/portal/iam/sharedidp-keycloak#postgres-custom-user>"
+      postgresPassword: "<path:factory-x/data/portal/iam/sharedidp-keycloak#postgres-admin-user>"
 
 realmSeeding:
   realms:
     cxOperator:
       centralidp: "https://centralidp.factory-x.catena-x.net"
       initialUser:
-        password: "<path:portal/data/portal/iam/sharedidp-keycloak#initial-operator-user>"
+        password: "<path:factory-x/data/portal/iam/sharedidp-keycloak#initial-operator-user>"
       mailing:
-        host: "<path:portal/data/mailing#host>"
-        port: "<path:portal/data/mailing#port>"
-        username: "<path:portal/data/mailing#user>"
-        password: "<path:portal/data/mailing#password"
-        from: "<path:portal/data/mailing#senderMail>"
-        replyTo: "<path:portal/data/mailing#senderMail>"
+        host: "<path:factory-x/data/mailing#host>"
+        port: "<path:factory-x/data/mailing#port>"
+        username: "<path:factory-x/data/mailing#user>"
+        password: "<path:factory-x/data/mailing#password"
+        from: "<path:factory-x/data/mailing#senderMail>"
+        replyTo: "<path:factory-x/data/mailing#senderMail>"
     master:
       serviceAccounts:
         provisioning:
-          clientSecret: "<path:portal/data/portal/iam/sharedidp-client-secrets#reg-shared-sa>"
+          clientSecret: "<path:factory-x/data/portal/iam/sharedidp-client-secrets#reg-shared-sa>"
         saCxOperator:
-          clientSecret: "<path:portal/data/portal/iam/sharedidp-client-secrets#sa-operator>"
+          clientSecret: "<path:factory-x/data/portal/iam/sharedidp-client-secrets#sa-operator>"
